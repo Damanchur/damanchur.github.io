@@ -42,7 +42,7 @@
         }
         /* Set flag size to 10% of screen width */
         img.flag {
-            width: 10vw;
+            width: 2vw;
             height: auto;
         }
     </style>
@@ -69,7 +69,7 @@
                         <td>08.02.2024</td>
                         <td><img class="flag" src="flag_kabuto.png" alt="Kabuto Flag"> Królestwo Kabuto</td>
                         <td><img class="flag" src="flag_poland.png" alt="Poland Flag"> Polska</td>
-                        <td><img class="flag" src="flag_result_draw.png" alt="Draw Flag"> 3 - 3</td>
+                        <td>3 - 3</td>
                     </tr>
                 </tbody>
             </table>
@@ -103,30 +103,42 @@
 
         <section id="country">
             <h2>Reprezentacje Krajów</h2>
-            <div class="country-info">
-                <h3>Kaszuby</h3>
-                <img class="flag" src="flag_kaszuby.png" alt="Kaszuby Flag">
-                <p>Player 1: John Doe</p>
-                <p>Player 2: Jane Doe</p>
-            </div>
-            <div class="country-info">
-                <h3>Królestwo Kabuto</h3>
-                <img class="flag" src="flag_kabuto.png" alt="Kabuto Flag">
-                <p>Player 1: John Smith</p>
-                <p>Player 2: Sarah Johnson</p>
-            </div>
-            <div class="country-info">
-                <h3>Polska</h3>
-                <img class="flag" src="flag_poland.png" alt="Poland Flag">
-                <p>Player 1: Adam Nowak</p>
-                <p>Player 2: Anna Kowalska</p>
-            </div>
-            <div class="country-info">
-                <h3>Śląsk</h3>
-                <img class="flag" src="flag_silesia.png" alt="Silesia Flag">
-                <p>Player 1: Tomasz Kowalczyk</p>
-                <p>Player 2: Karolina Nowak</p>
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kraj</th>
+                        <th>Flaga</th>
+                        <th>Gracz 1</th>
+                        <th>Gracz 2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kaszuby</td>
+                        <td><img class="flag" src="flag_kaszuby.png" alt="Kaszuby Flag"></td>
+                        <td>John Doe</td>
+                        <td>Jane Doe</td>
+                    </tr>
+                    <tr>
+                        <td>Królestwo Kabuto</td>
+                        <td><img class="flag" src="flag_kabuto.png" alt="Kabuto Flag"></td>
+                        <td>John Smith</td>
+                        <td>Sarah Johnson</td>
+                    </tr>
+                    <tr>
+                        <td>Polska</td>
+                        <td><img class="flag" src="flag_poland.png" alt="Poland Flag"></td>
+                        <td>Adam Nowak</td>
+                        <td>Anna Kowalska</td>
+                    </tr>
+                    <tr>
+                        <td>Śląsk</td>
+                        <td><img class="flag" src="flag_silesia.png" alt="Silesia Flag"></td>
+                        <td>Tomasz Kowalczyk</td>
+                        <td>Karolina Nowak</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </div>
 </body>
