@@ -131,16 +131,8 @@
     <script>
         // Initialize DataTable
         $(document).ready( function () {
-            $('#clubs-table').DataTable({
-                "columnDefs": [
-                    { "type": "num", "targets": 4 } // Sort "Budżet Klubu" column as numeric
-                ]
-            });
+            $('#clubs-table').DataTable();
         });
-
-        function sortTable(columnIndex) {
-            $('#clubs-table').DataTable().order([columnIndex, 'asc']).draw();
-        }
 
         function updateTime() {
             const now = new Date();
