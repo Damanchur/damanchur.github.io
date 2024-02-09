@@ -171,9 +171,10 @@
             }
         });
 
-        // Initialize DataTable
+        // Initialize DataTable with sorting by "Punkty" column in descending order
         $(document).ready( function () {
             $('#clubs-table').DataTable({
+                "order": [[2, "desc"]], // Sort by column index 2 (Punkty) in descending order
                 columnDefs: [{
                     type: 'currency', 
                     targets: 4 // Apply custom sorting to "Budżet Klubu" column
