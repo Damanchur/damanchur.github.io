@@ -40,10 +40,31 @@
             background-color: #333;
             color: #fff;
         }
-        /* Set flag size to 10% of screen width */
+        /* Set flag height to 16 pixels */
         img.flag {
             height: 16px;
             width: auto;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .button {
+            display: block;
+            padding: 10px 20px;
+            margin-bottom: 5px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .clock {
+            float: right;
+            font-size: 18px;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -52,100 +73,55 @@
         <h1>Związek Choroszczańskiej Piłki Nożnej</h1>
     </header>
     <div class="container">
-        <section id="matches">
-            <h2>Wyniki Meczy</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Gospodarze</th>
-                        <th>Goście</th>
-                        <th>Wynik</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Add match results here -->
-                    <tr>
-                        <td>08.02.2024</td>
-                        <td><img class="flag" src="flag_kabuto.png"> Królestwo Kabuto</td>
-                        <td><img class="flag" src="flag_poland.png"> Polska</td>
-                        <td>3 - 3</td>
-                    </tr>
-                    <tr>
-                        <td>09.02.2024</td>
-                        <td><img class="flag" src="flag_kabuto.png"> Królestwo Kabuto</td>
-                        <td><img class="flag" src="flag_silesia.png"> Śląsk</td>
-                        <td>5 - 1</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section id="upcoming-matches">
-            <h2>Nadchodzące Mecze</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Gospodarze</th>
-                        <th>Goście</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Add upcoming matches here -->
-                    <tr>
-                        <td>10.02.2024</td>
-                        <td><img class="flag" src="flag_kaszuby.png"> Kaszuby</td>
-                        <td><img class="flag" src="flag_poland.png"> Polska</td>
-                    </tr>
-                    <tr>
-                        <td>11.02.2024</td>
-                        <td><img class="flag" src="flag_kabuto.png"> Królestwo Kabuto</td>
-                        <td><img class="flag" src="flag_poland.png"> Polska</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section id="country">
-            <h2>Reprezentacje Krajów</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Flaga</th>
-                        <th>Kraj</th>
-                        <th>Gracz 1</th>
-                        <th>Gracz 2</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img class="flag" src="flag_kaszuby.png"></td>
-                        <td>Kaszuby</td>
-                        <td>Soczek56789</td>
-                        <td>XkalkierX</td>
-                    </tr>
-                    <tr>
-                        <td><img class="flag" src="flag_kabuto.png"></td>
-                        <td>Królestwo Kabuto</td>
-                        <td>Damanchur</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td><img class="flag" src="flag_poland.png"></td>
-                        <td>Polska</td>
-                        <td>fan_porsche</td>
-                        <td>Mechownik</td>
-                    </tr>
-                    <tr>
-                        <td><img class="flag" src="flag_silesia.png"></td>
-                        <td>Śląsk</td>
-                        <td>klakuś gwiazda</td>
-                        <td>hamsterektv</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <h2>Wyniki Ostatnich Meczów<span class="clock" id="clock"></span></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Gospodarze</th>
+                    <th>Goście</th>
+                    <th>Wynik</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Add last three match results here -->
+                <tr>
+                    <td>09.02.2024</td>
+                    <td><img class="flag" src="flag_kabuto.png"> Królestwo Kabuto</td>
+                    <td><img class="flag" src="flag_silesia.png"> Śląsk</td>
+                    <td>5 - 1</td>
+                </tr>
+                <tr>
+                    <td>08.02.2024</td>
+                    <td><img class="flag" src="flag_kabuto.png"> Królestwo Kabuto</td>
+                    <td><img class="flag" src="flag_poland.png"> Polska</td>
+                    <td>3 - 3</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Buttons for redirection -->
+        <h2>Wybierz działanie</h2>
+        <div class="button-container">
+            <a href="matches.html" class="button">Liga Narodów</a>
+            <a href="clubs.html" class="button">Mistrz Ligi</a>
+            <a href="players.html" class="button">Puchar Sztabu Złotego</a>
+            <a href="add_match.html" class="button">Mistrzostwa Europy Środkowej</a>
+            <a href="add_player.html" class="button">Liga Klubów</a>
+        </div>
     </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        // Update time every second
+        setInterval(updateTime, 1000);
+        // Initial call to display time immediately
+        updateTime();
+    </script>
 </body>
 </html>
