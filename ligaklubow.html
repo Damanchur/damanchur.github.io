@@ -25,6 +25,9 @@
         }
         h2 {
             color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         table {
             width: 100%;
@@ -40,6 +43,9 @@
             background-color: #333;
             color: #fff;
         }
+        .clock {
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -47,7 +53,7 @@
         <h1>Liga Klubów</h1>
     </header>
     <div class="container">
-        <h2>Tabela ligi klubów</h2>
+        <h2>Kluby<span class="clock" id="clock"></span></h2>
         <table>
             <thead>
                 <tr>
@@ -76,6 +82,43 @@
                 <!-- Add more clubs as needed -->
             </tbody>
         </table>
+
+        <!-- List of all matches -->
+        <h2>Wszystkie mecze</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Gospodarze</th>
+                    <th>Goście</th>
+                    <th>Wynik</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Add all matches here -->
+                <tr>
+                    <td>09.02.2024</td>
+                    <td>Orły Dzikie</td>
+                    <td>Arsenal</td>
+                    <td>4 - 0</td>
+                </tr>
+                <!-- Add more matches -->
+            </tbody>
+        </table>
     </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        // Update time every second
+        setInterval(updateTime, 1000);
+        // Initial call to display time immediately
+        updateTime();
+    </script>
 </body>
 </html>
