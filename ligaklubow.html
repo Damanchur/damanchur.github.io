@@ -118,7 +118,11 @@
     <script>
         // Initialize DataTable
         $(document).ready( function () {
-            $('#clubs-table').DataTable();
+            $('#clubs-table').DataTable({
+                "columnDefs": [
+                    { "type": "num", "targets": 4 } // Sort "Budżet Klubu" column as numeric
+                ]
+            });
         });
 
         function sortTable(columnIndex) {
