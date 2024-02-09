@@ -116,18 +116,28 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 
     <script>
+        // Add a custom sorting function for "Budżet Klubu" column
+        jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+            "currency-pre": function (a) {
+                return parseFloat(a.replace(/[^\d\-\.]/g, ''));
+            },
+            "currency-asc": function (a, b) {
+                return a - b;
+            },
+            "currency-desc": function (a, b) {
+                return b - a;
+            }
+        });
+
         // Initialize DataTable
         $(document).ready( function () {
             $('#clubs-table').DataTable({
-                "columnDefs": [
-                    { "type": "num", "targets": 4 } // Sort "Budżet Klubu" column as numeric
-                ]
+                columnDefs: [{
+                    type: 'currency', 
+                    targets: 4 // Apply custom sorting to "Budżet Klubu" column
+                }]
             });
         });
-
-        function sortTable(columnIndex) {
-            $('#clubs-table').DataTable().order([columnIndex, 'asc']).draw();
-        }
 
         function updateTime() {
             const now = new Date();
