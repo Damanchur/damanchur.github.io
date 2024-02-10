@@ -66,6 +66,13 @@
             font-size: 18px;
             margin-top: 5px;
         }
+        /* Set fixed width for Gospodarze and Goście columns */
+        #last-matches th:nth-child(2),
+        #last-matches td:nth-child(2),
+        #last-matches th:nth-child(4),
+        #last-matches td:nth-child(4) {
+            width: 50%;
+        }
     </style>
 </head>
 <body>
@@ -74,7 +81,7 @@
     </header>
     <div class="container">
         <h2>Wyniki Ostatnich Meczów<span class="clock" id="clock"></span></h2>
-        <table>
+        <table id="last-matches">
             <thead>
                 <tr>
                     <th>Data</th>
