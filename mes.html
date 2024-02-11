@@ -53,6 +53,24 @@
         .clock {
             font-size: 18px;
         }
+        /* Set fixed width for Gospodarze and Goście columns */
+        #match-calendar th:nth-child(2),
+        #match-calendar td:nth-child(2),
+        #match-calendar th:nth-child(3),
+        #match-calendar td:nth-child(3) {
+            width: 50%;
+        }
+        /* Set fixed width for Gospodarze and Goście columns */
+        #all-matches th:nth-child(2),
+        #all-matches td:nth-child(2),
+        #all-matches th:nth-child(4),
+        #all-matches td:nth-child(4) {
+            width: 50%;
+        }
+        td {
+          text-align: center;
+          vertical-align: middle;
+        }
         /* Centered footer */
         footer {
             text-align: center;
@@ -69,11 +87,12 @@
         footer ul li img {
             height: 30px;
         }
-        {
-          text-align: center;
-        }
     </style>
 </head>
+<body>
+    <header>
+        <h1>Mistrzostwa Europy Środkowej</h1>
+    </header
 
         <!-- List of all matches -->
         <h2>Półfinały</h2>
@@ -82,6 +101,7 @@
                 <tr>
                     <th>Data</th>
                     <th>Gospodarze</th>
+                    <th>Wynik</th>
                     <th>Goście</th>
                 </tr>
             </thead>
@@ -89,37 +109,21 @@
                 <!-- Add all matches here -->
                 <tr>
                     <td>16.02.2024</td>
-                    <td><img class="flag" src="flag_kabuto.png"> Królestwo Kabuto</t
+                    <td><img class="flag" src="flag_kabuto.png"> Królestwo Kabuto</td>
+                    <td>-</td>
                     <td><img class="flag" src="flag_poland.png"> Polska</td>
                 </tr>
                 <tr>
                     <td>17.02.2024</td>
-                    <td><img class="flag" src="flag_silesia.png"> Śląsk</td>
                     <td><img class="flag" src="flag_kaszuby.png"> Kaszuby</td>
+                    <td>-</td>
+                    <td><img class="flag" src="flag_silesia.png"> Śląsk</td>
                 </tr>
-            </tbody>
-        </table>
-
-        <h2>Finały</h2>
-        <table id="semifinals">
-            <thead>
                 <tr>
-                    <th>Data</th>
-                    <th>Gospodarze</th>
-                    <th>Goście</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Add all matches here -->
-                <tr>
-                    <td>18.02.2024</td>
-                    <td>Wygrany Półfinałów</t
-                    <td>Wygrany Półfinałów</td>
-                </tr>
             </tbody>
         </table>
     </div>
-    
+
     <footer>
         <h3>Kontakt</h3>
         <ul>
@@ -127,5 +131,31 @@
             <li><a href="https://discord.gg/dPP3PsunV2" target="_blank"><img src="discord_logo.png"></a></li>
         </ul>
     </footer>
+    
+    <!-- Add jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Add DataTables JS -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
+    <script>
+        // Initialize DataTable with sorting by "Punkty" column in descending order
+        $(document).ready( function () {
+            $('#clubs-table').DataTable({
+                "order": [[3, "desc"]] // Sort by column index 4 (Punkty) in descending order
+            });
+        });
+
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        // Update time every second
+        setInterval(updateTime, 1000);
+        // Initial call to display time immediately
+        updateTime();
+    </script>
 </body>
 </html>
