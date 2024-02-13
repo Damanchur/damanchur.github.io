@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zawodnicy</title>
+    <title>Kluby</title>
     <!-- Add DataTables CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
     <style>
@@ -33,7 +33,7 @@
             align-items: center;
         }
         table {
-            width: 100%;
+            width: auto; /* Set width to auto to allow it to fit within the container */
             border-collapse: collapse;
             margin-bottom: 20px;
         }
@@ -41,6 +41,7 @@
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
+            white-space: nowrap; /* Prevent text wrapping */
         }
         th {
             background-color: #333;
@@ -73,13 +74,12 @@
         /* Responsive table */
         @media only screen and (max-width: 600px) {
             table {
-                font-size: 12px;
+                font-size: 12px; /* Decrease font size for smaller screens */
             }
             th, td {
                 padding: 6px;
             }
         }
-    </style>
 </head>
 <body>
     <header>
