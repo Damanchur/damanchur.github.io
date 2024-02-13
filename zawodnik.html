@@ -21,9 +21,10 @@
             text-align: center;
         }
         .container {
-            max-width: 1600px;
+            max-width: 100%; /* Changed to 100% */
             margin: 20px auto;
             padding: 0 20px;
+            overflow-x: auto; /* Added to enable horizontal scrolling on smaller screens */
         }
         h2 {
             color: #333;
@@ -35,6 +36,7 @@
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
+            white-space: nowrap; /* Added to prevent line breaks in table cells */
         }
         th, td {
             border: 1px solid #ddd;
@@ -68,6 +70,17 @@
         }
         footer ul li img {
             height: 30px;
+        }
+
+        /* Additional CSS for smaller screens */
+        @media only screen and (max-width: 768px) {
+            th, td {
+                font-size: 12px;
+                padding: 6px;
+            }
+            .clock {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
