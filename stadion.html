@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Football Stadiums</title>
+    <title>stad</title>
     <style>
         /* Some basic styling */
         body {
@@ -46,12 +46,13 @@
         }
         .images-container {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            flex-direction: row; /* Display items in a row */
+            justify-content: center;
         }
         .image-wrapper {
-            margin: 5px;
+            width: 50%; /* Each image wrapper takes 50% of the container */
+            box-sizing: border-box; /* Include padding and border in the width */
+            padding: 5px; /* Add some space between images */
         }
         /* Centered footer */
         footer {
