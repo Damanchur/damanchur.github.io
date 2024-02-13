@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zawodnicy</title>
+    <title>Kluby</title>
     <!-- Add DataTables CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
     <style>
@@ -21,10 +21,9 @@
             text-align: center;
         }
         .container {
-            max-width: 100%; /* Changed to 100% */
+            max-width: 800px;
             margin: 20px auto;
             padding: 0 20px;
-            overflow-x: auto; /* Added to enable horizontal scrolling on smaller screens */
         }
         h2 {
             color: #333;
@@ -36,12 +35,12 @@
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
-            white-space: nowrap; /* Added to prevent line breaks in table cells */
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 6px; /* Reduced padding */
             text-align: left;
+            font-size: 14px; /* Smaller font size */
         }
         th {
             background-color: #333;
@@ -76,7 +75,7 @@
         @media only screen and (max-width: 768px) {
             th, td {
                 font-size: 12px;
-                padding: 6px;
+                padding: 4px; /* Further reduced padding */
             }
             .clock {
                 font-size: 14px;
