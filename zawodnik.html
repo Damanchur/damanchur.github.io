@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kluby</title>
+    <title>Zawodnicy</title>
     <!-- Add DataTables CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
     <style>
@@ -13,7 +13,6 @@
             margin: 0;
             padding: 0;
             background-color: #f2f2f2;
-            overflow-x: hidden; /* Hide horizontal scrollbar */
         }
         header {
             background-color: #333;
@@ -22,8 +21,8 @@
             text-align: center;
         }
         .container {
-            max-width: 800px; /* Set maximum width */
-            margin: 20px auto; /* Center the container */
+            max-width: 800px;
+            margin: 20px auto;
             padding: 0 20px;
         }
         h2 {
@@ -33,56 +32,48 @@
             align-items: center;
         }
         table {
-            width: auto;
+            width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 4px; /* Reduce padding */
+            padding: 8px;
             text-align: left;
-            white-space: nowrap; /* Prevent line breaks */
         }
         th {
             background-color: #333;
             color: #fff;
-            cursor: pointer;
+            cursor: pointer; /* Add pointer cursor for clickable headers */
         }
         .clock {
             font-size: 18px;
         }
         td {
-            text-align: center;
-            vertical-align: middle;
+          text-align: center;
+          vertical-align: middle;
         }
+        /* Centered footer */
         footer {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 50px;
         }
         footer ul {
+            list-style-type: none;
             padding: 0;
-            margin: 0;
-            list-style: none;
         }
         footer ul li {
-            display: inline;
+            display: inline-block;
             margin: 0 10px;
         }
-        footer ul li a img {
+        footer ul li img {
             height: 30px;
         }
-        /* Responsive table */
-        @media only screen and (max-width: 600px) {
-            table {
-                font-size: 10px; /* Reduce font size */
-            }
-        }
-    </style>
     </style>
 </head>
 <body>
     <header>
-        <h1>Zawoddnicy</h1>
+        <h1>Zawodnicy</h1>
     </header>
     <div class="container">
         <h2>Zawodnicy<span class="clock" id="clock"></span></h2>
