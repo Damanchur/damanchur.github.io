@@ -23,21 +23,26 @@
             margin: 20px auto;
             padding: 0 20px;
         }
-        h2 {
-            color: #333;
-            text-align: center;
-        }
         .stadium {
             margin-bottom: 20px;
             text-align: center;
         }
-        .stadium img {
-            width: 100%;
-            height: auto;
+        .stadium h2 {
+            font-size: 24px;
+            font-weight: bold;
         }
         .stadium p {
+            font-size: 16px;
             margin-top: 10px;
-            text-align: center;
+        }
+        .stadium img {
+            width: 30%;
+            height: auto;
+            margin: 5px;
+        }
+        .stadium .pic-description {
+            font-size: 14px;
+            margin-top: 5px;
         }
         /* Centered footer */
         footer {
@@ -63,20 +68,28 @@
     </header>
     <div class="container">
         <div class="stadium">
-            <img src="stadium1.jpg" alt="Stadium 1">
-            <p>Stadium 1 Description</p>
+            <h2>Stadium 1</h2>
+            <p>Description of Stadium 1</p>
+            <div>
+                <img src="stadium1_1.jpg" alt="Stadium 1 Image 1">
+                <p class="pic-description">Image 1 Description</p>
+                <img src="stadium1_2.jpg" alt="Stadium 1 Image 2">
+                <p class="pic-description">Image 2 Description</p>
+                <img src="stadium1_3.jpg" alt="Stadium 1 Image 3">
+                <p class="pic-description">Image 3 Description</p>
+            </div>
         </div>
         <div class="stadium">
-            <img src="stadium2.jpg" alt="Stadium 2">
-            <p>Stadium 2 Description</p>
-        </div>
-        <div class="stadium">
-            <img src="stadium3.jpg" alt="Stadium 3">
-            <p>Stadium 3 Description</p>
-        </div>
-        <div class="stadium">
-            <img src="stadium4.jpg" alt="Stadium 4">
-            <p>Stadium 4 Description</p>
+            <h2>Stadium 2</h2>
+            <p>Description of Stadium 2</p>
+            <div>
+                <img src="stadium2_1.jpg" alt="Stadium 2 Image 1">
+                <p class="pic-description">Image 1 Description</p>
+                <img src="stadium2_2.jpg" alt="Stadium 2 Image 2">
+                <p class="pic-description">Image 2 Description</p>
+                <img src="stadium2_3.jpg" alt="Stadium 2 Image 3">
+                <p class="pic-description">Image 3 Description</p>
+            </div>
         </div>
     </div>
 
@@ -89,4 +102,3 @@
     </footer>
 </body>
 </html>
-
