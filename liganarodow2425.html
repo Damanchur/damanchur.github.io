@@ -162,6 +162,94 @@
                 </table>
             </div>
         </div>
+
+        <!-- List of all matches -->
+        <h2>Wszystkie mecze</h2>
+        <table id="all-matches">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Gospodarze</th>
+                    <th>Wynik</th>
+                    <th>Goście</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01.05.2024</td>
+                    <td><img class="flag" src="flag_kabuto.png"> Król. Kabuto</td>
+                    <td></td>
+                    <td><img class="flag" src="flag_poland.png"> Polska</td>
+                </tr>
+                <tr>
+                    <td>02.05.2024</td>
+                    <td><img class="flag" src="flag_kaszuby.png"> Kaszuby</td>
+                    <td></td>
+                    <td><img class="flag" src="flag_poland.png"> Polska</td>
+                </tr>
+                <tr>
+                    <td>03.05.2024</td>
+                    <td><img class="flag" src="flag_silesia.png"> Śląsk</td>
+                    <td></td>
+                    <td><img class="flag" src="flag_kabuto.png"> Król. Kabuto</td>
+                </tr>
+                <tr>
+                    <td>04.05.2024</td>
+                    <td><img class="flag" src="flag_silesia.png"> Śląsk</td>
+                    <td></td>
+                    <td><img class="flag" src="flag_kaszuby.png"> Kaszuby</td>
+                </tr>
+                <tr>
+                    <td>05.05.2024</td>
+                    <td><img class="flag" src="flag_kaszuby.png"> Kaszuby</td>
+                    <td></td>
+                    <td><img class="flag" src="flag_kabuto.png"> Król. Kabuto</td>
+                </tr>
+                <tr>
+                    <td>06.05.2024</td>
+                    <td><img class="flag" src="flag_silesia.png"> Śląsk</td>
+                    <td></td>
+                    <td><img class="flag" src="flag_poland.png"> Polska</td>
+                </tr>
+                <tr>
+                    <td>07.05.2024</td>
+                    <td><img class="flag" src="flag_kabuto.png"> Król. Kabuto</td>
+                    <td></td>
+                    <td><img class="flag" src="flag_poland.png"> Polska</td>
+                </tr>
+                <tr>
+                    <td>08.05.2024</td>
+                    <td><img class="flag" src="flag_kaszuby.png"> Kaszuby</td>
+                    <td></td>
+                    <td><img class="flag" src="flag_poland.png"> Polska</td>
+                </tr>
+                <tr>
+                    <td>09.05.2024</td>
+                    <td><img class="flag" src="flag_silesia.png"> Śląsk</td>
+                    <td></td>
+                    <td><img class="flag" src="flag_kabuto.png"> Król. Kabuto</td>
+                </tr>
+                <tr>
+                    <td>10.05.2024</td>
+                    <td><img class="flag" src="flag_silesia.png"> Śląsk</td>
+                    <td></td>
+                    <td><img class="flag" src="flag_kaszuby.png"> Kaszuby</td>
+                </tr>
+                <tr>
+                    <td>11.05.2024</td>
+                    <td><img class="flag" src="flag_kaszuby.png"> Kaszuby</td>
+                    <td></td>
+                    <td><img class="flag" src="flag_kabuto.png"> Król. Kabuto</td>
+                </tr>
+                <tr>
+                    <td>12.05.2024</td>
+                    <td><img class="flag" src="flag_silesia.png"> Śląsk</td>
+                    <td></td>
+                    <td><img class="flag" src="flag_poland.png"> Polska</td>
+                </tr>
+                <!-- Add more matches -->
+            </tbody>
+        </table>
     </div>
 
     <footer>
@@ -180,7 +268,7 @@
     <script>
         // Initialize DataTable with sorting by "Punkty" column in descending order
         $(document).ready( function () {
-            $('#clubs-table').DataTable({
+            $('#dywizja-a, #dywizja-b, #all-matches').DataTable({
                 "order": [[3, "desc"]] // Sort by column index 4 (Punkty) in descending order
             });
         });
