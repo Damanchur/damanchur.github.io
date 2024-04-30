@@ -104,124 +104,38 @@
     </header>
     <div class="container">
         <h2>Reprezentacje Krajów<span class="clock" id="clock"></span></h2>
-        <table id="clubs-table">
-            <thead>
-                <tr>
-                    <th colspan="2">DYWIZJA A</th>
-                    <th colspan="2">DYWIZJA B</th>
-                </tr>
-                <tr>
-                    <th>Flaga</th>
-                    <th>Kraj</th>
-                    <th>Gracze</th>
-                    <th>Punkty</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img class="flag" src="flag_kaszuby.png"></td>
-                    <td>Kaszuby</td>
-                    <td>Soczek56789, XkalkierX</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td><img class="flag" src="flag_kabuto.png"></td>
-                    <td>Królestwo Kabuto</td>
-                    <td>Damanchur</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td><img class="flag" src="flag_poland.png"></td>
-                    <td>Polska</td>
-                    <td>fan_porsche, MECHOWNIK</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td><img class="flag" src="flag_silesia.png"></td>
-                    <td>Śląsk</td>
-                    <td>klakuś gwiazda, hamsterektv</td>
-                    <td>0</td>
-                </tr>
-                <!-- Add more clubs as needed -->
-            </tbody>
-        </table>
-
-        <!-- List of all matches -->
-        <h2>Wszystkie mecze</h2>
-        <table id="all-matches">
-            <thead>
-                <tr>
-                    <th>Data</th>
-                    <th>Gospodarze</th>
-                    <th>Wynik</th>
-                    <th>Goście</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Add all matches here -->
-                <tr>
-                    <td>11.02.2024</td>
-                    <td><img class="flag" src="flag_kabuto.png"> Królestwo Kabuto</td>
-                    <td>2 - 6</td>
-                    <td><img class="flag" src="flag_kaszuby.png"> Kaszuby</td>
-                </tr>
-                <tr>
-                    <td>10.02.2024</td>
-                    <td><img class="flag" src="flag_kaszuby.png"> Kaszuby</td>
-                    <td>2 - 2</td>
-                    <td><img class="flag" src="flag_poland.png"> Polska</td>
-                </tr>
-                <tr>
-                    <td>09.02.2024</td>
-                    <td><img class="flag" src="flag_kabuto.png"> Królestwo Kabuto</td>
-                    <td>5 - 1</td>
-                    <td><img class="flag" src="flag_silesia.png"> Śląsk</td>
-                </tr>
-                <tr>
-                    <td>08.02.2024</td>
-                    <td><img class="flag" src="flag_kabuto.png"> Królestwo Kabuto</td>
-                    <td>3 - 3</td>
-                    <td><img class="flag" src="flag_poland.png"> Polska</td>
-                </tr>
-                <tr>
-                    <td>07.02.2024</td>
-                    <td><img class="flag" src="flag_kaszuby.png"> Kaszuby</td>
-                    <td>ANULOWANO</td>
-                    <td><img class="flag" src="flag_poland.png"> Polska</td>
-                </tr>
-                <tr>
-                    <td>06.02.2024</td>
-                    <td><img class="flag" src="flag_silesia.png"> Śląsk</td>
-                    <td>3 - 2</td>
-                    <td><img class="flag" src="flag_poland.png"> Polska</td>
-                </tr>
-                <tr>
-                    <td>05.02.2024</td>
-                    <td><img class="flag" src="flag_silesia.png"> Śląsk</td>
-                    <td>4 - 2</td>
-                    <td><img class="flag" src="flag_kaszuby.png"> Kaszuby</td>
-                </tr>
-                <tr>
-                    <td>04.02.2024</td>
-                    <td><img class="flag" src="flag_kaszuby.png"> Kaszuby</td>
-                    <td>3 - 1</td>
-                    <td><img class="flag" src="flag_kabuto.png"> Królestwo Kabuto</td>
-                </tr>
-                <tr>
-                    <td>03.02.2024</td>
-                    <td><img class="flag" src="flag_silesia.png"> Śląsk</td>
-                    <td>2 - 1</td>
-                    <td><img class="flag" src="flag_kabuto.png"> Królestwo Kabuto</td>
-                </tr>
-                <tr>
-                    <td>02.02.2024</td>
-                    <td><img class="flag" src="flag_silesia.png"> Śląsk</td>
-                    <td>2 - 4</td>
-                    <td><img class="flag" src="flag_kaszuby.png"> Kaszuby</td>
-                </tr>
-                <!-- Add more matches -->
-            </tbody>
-        </table>
+        <div style="display: flex;">
+            <div style="flex: 1;">
+                <h3>DYWIZJA A</h3>
+                <table id="dywizja-a">
+                    <thead>
+                        <tr>
+                            <th>Flaga</th>
+                            <th>Kraj</th>
+                            <th>Gracze</th>
+                            <th>Punkty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div style="flex: 1;">
+                <h3>DYWIZJA B</h3>
+                <table id="dywizja-b">
+                    <thead>
+                        <tr>
+                            <th>Flaga</th>
+                            <th>Kraj</th>
+                            <th>Gracze</th>
+                            <th>Punkty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -242,6 +156,15 @@
         $(document).ready( function () {
             $('#clubs-table').DataTable({
                 "order": [[3, "desc"]] // Sort by column index 4 (Punkty) in descending order
+            });
+            
+            // Move rows to respective divisions
+            $('#clubs-table tbody tr').each(function() {
+                if ($(this).find('td:eq(3)').text() == '0') {
+                    $('#dywizja-a tbody').append($(this).clone());
+                } else {
+                    $('#dywizja-b tbody').append($(this).clone());
+                }
             });
         });
 
