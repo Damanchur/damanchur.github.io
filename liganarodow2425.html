@@ -117,6 +117,19 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td><img class="flag" src="flag_kaszuby.png"></td>
+                            <td>Kaszuby</td>
+                            <td>Soczek56789, XkalkierX</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><img class="flag" src="flag_kabuto.png"></td>
+                            <td>Królestwo Kabuto</td>
+                            <td>Damanchur</td>
+                            <td>0</td>
+                        </tr>
+                        <!-- Add more teams for DYWIZJA A as needed -->
                     </tbody>
                 </table>
             </div>
@@ -132,6 +145,19 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td><img class="flag" src="flag_poland.png"></td>
+                            <td>Polska</td>
+                            <td>fan_porsche, MECHOWNIK</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td><img class="flag" src="flag_silesia.png"></td>
+                            <td>Śląsk</td>
+                            <td>klakuś gwiazda, hamsterektv</td>
+                            <td>0</td>
+                        </tr>
+                        <!-- Add more teams for DYWIZJA B as needed -->
                     </tbody>
                 </table>
             </div>
@@ -156,15 +182,6 @@
         $(document).ready( function () {
             $('#clubs-table').DataTable({
                 "order": [[3, "desc"]] // Sort by column index 4 (Punkty) in descending order
-            });
-            
-            // Move rows to respective divisions
-            $('#clubs-table tbody tr').each(function() {
-                if ($(this).find('td:eq(3)').text() == '0') {
-                    $('#dywizja-a tbody').append($(this).clone());
-                } else {
-                    $('#dywizja-b tbody').append($(this).clone());
-                }
             });
         });
 
