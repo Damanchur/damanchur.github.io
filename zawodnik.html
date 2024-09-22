@@ -35,7 +35,6 @@
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
-            display: block;
             overflow-x: auto;
         }
         th, td {
@@ -71,6 +70,10 @@
         footer ul li img {
             height: 30px;
         }
+		img.flag {
+            height: 16px;
+            width: auto;
+        }
     </style>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FEGL3RQL3R"></script>
@@ -92,61 +95,50 @@
             <thead>
                 <tr>
                     <th>Nick</th>
-                    <th>Klub</th>
-                    <th>Cena</th>
+                    <th>Reprezentacja</th>
                     <th>Gole</th>
-                    <th>Osiągnięcia</th>
                 </tr>
             </thead>
             <tbody>
+				<tr>
+                    <td>soczek</td>
+                    <td><img class="flag" src="flagpic/flag_kaszuby.png"> Kaszuby</td>
+                    <td>19</td>
+                </tr>
                 <tr>
                     <td>Damanchur</td>
-                    <td>RKS Radomiak</td>
-                    <td>433 000zł</td>
-                    <td>55</td>
-                    <td>Złoto pucharu sztabu złotego 23; Wygranie MEŚ 2024.</td>
+                    <td><img class="flag" src="flagpic/flag_kabuto.png"> Królestwo Kabuto</td>
+                    <td>19</td>
                 </tr>
                 <tr>
                     <td>klakuś gwiazda</td>
-                    <td>RKS Radomiak</td>
-                    <td>200 000zł</td>
-                    <td>60</td>
-                    <td>Złoty medal mistrza ligi 23.</td>
+                    <td><img class="flag" src="flagpic/flag_vatican.png"> Watykan</td>
+                    <td>26</td>
                 </tr>
-                <tr>
-                    <td>hamsterektv</td>
-                    <td>Orły Dzikie</td>
-                    <td>194 000zł</td>
-                    <td>46</td>
-                    <td>4 miejsce mistrza ligi 23; Drugie miejsce MEŚ 24.</td>
-                </tr>
-                <tr>
-                    <td>xklakierx</td>
-                    <td>UFC Pomorze</td>
-                    <td>196 000zł</td>
-                    <td>45</td>
-                    <td>Pokonanie 1 drużyny jako 6 drużyna rankingu HMPN; Brązowy medal mistrza ligi 23.</td>
-                </tr>
-                <tr>
-                    <td>fan_porsche</td>
-                    <td>Podbeskidzie</td>
-                    <td>180 000zł</td>
-                    <td>27</td>
-                    <td>Srebro pucharu sztabu złotego 23.</td>
-                </tr>
-                <tr>
-                    <td>soczek</td>
-                    <td>Orły Dzikie</td>
-                    <td>88 000zł</td>
+				<tr>
+                    <td>Max</td>
+                    <td><img class="flag" src="flagpic/flag_sanmarino.png"> San Marino</td>
                     <td>11</td>
-                    <td>Drugie miejsce MEŚ 24.</td>
                 </tr>
-                <tr>
-                    <td>chugonov</td>
-                    <td>Śląsk Wrocław</td>
-                    <td>25 000zł</td>
+				<tr>
+                    <td>miki</td>
+                    <td><img class="flag" src="flagpic/flag_kabuto.png"> Królestwo Kabuto</td>
+                    <td>9</td>
+                </tr>
+				<tr>
+                    <td>MECHOWNIK</td>
+                    <td><img class="flag" src="flagpic/flag_poland.png"> Polska</td>
+                    <td>14</td>
+                </tr>
+				<tr>
+                    <td>xklakierx</td>
+                    <td><img class="flag" src="flagpic/flag_kaszuby.png"> Kaszuby</td>
+                    <td>5</td>
+                </tr>
+				<tr>
+                    <td>Panda</td>
+                    <td><img class="flag" src="flagpic/flag_antarktyda.png"> Antarktyda-POL</td>
                     <td>0</td>
-                    <td>-</td>
                 </tr>
                 <!-- Add more clubs as needed -->
             </tbody>
@@ -157,7 +149,7 @@
         <h3>Kontakt</h3>
         <ul>
             <li><a href="https://www.youtube.com/@zchpn"><img src="youtube_logo.png"></a></li>
-            <li><a href="https://discord.gg/TmeF99gbCx" target="_blank"><img src="discord_logo.png"></a></li>
+            <li><a href="https://discord.gg/dPP3PsunV2" target="_blank"><img src="discord_logo.png"></a></li>
         </ul>
     </footer>
 
@@ -182,13 +174,15 @@
 
         // Initialize DataTable with sorting by "Punkty" column in descending order
         $(document).ready( function () {
-            $('#clubs-table').DataTable({
-                columnDefs: [{
-                    type: 'currency', 
-                    targets: 2 // Apply custom sorting to "Budżet Klubu" column
-                }]
-            });
-        });
+		$('#clubs-table').DataTable({
+			order: [[2, 'desc']],  // Sort by the third column ("Gole") in descending order
+			columnDefs: [{
+				type: 'currency', 
+				targets: 2 // Apply custom sorting to the "Gole" column if necessary
+				}]
+			});
+		});
+
 
         function updateTime() {
             const now = new Date();
